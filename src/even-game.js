@@ -9,7 +9,7 @@ const isEvenGame = () => {
   const winningCount = 3;
   while (count < winningCount) {
     const randomNum = Math.floor(Math.random() * 10 + 1);
-    const userAnswer = readlineSync.question(`Question: ${randomNum}  `);
+    const userAnswer = readlineSync.question(`Question: ${randomNum} \nYour answer: `);
     if ((userAnswer === 'yes' && randomNumIsEven(randomNum) === true) || (userAnswer === 'no' && randomNumIsEven(randomNum) === false)) {
       console.log('Correct!');
       count += 1;
