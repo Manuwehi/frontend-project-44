@@ -6,3 +6,5 @@ const welcome = () => {
 };
 welcome();
 console.log(`Hello, ${getUserName()}!`);
+
+export default welcome;
