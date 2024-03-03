@@ -13,7 +13,7 @@ const baseEngine = (game) => {
     if (count === 0) {
       console.log(message);
     }
-    const userAnswer = readlineSync.question(`Question: ${question} `);
+    const userAnswer = readlineSync.question(`Question: ${question} \nYour answer: `);
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
       count += 1;
