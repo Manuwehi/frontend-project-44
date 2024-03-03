@@ -1,19 +1,30 @@
-import readlineSync from 'readline-sync';
-
 const calcGame = () => {
-  const textQa = [];
   const operatorArr = ['+', '-', '*'];
-  const randomOperator = operatorArr[Math.floor(Math.random() * (operandArr.length-1))];
   const leftRandomNum = Math.floor(Math.random() * 100 + 1);
   const rightRandomNum = Math.floor(Math.random() * 100 + 1);
-  let count = 0;
-  const maxCount = 3;
-  while (count < maxCount) {
-    const rightAnswer = leftRandomNum randomOperator rightRandomNum; // Вот тут ошибка
-    const userAnswer = readlineSync.question(`Question: ${leftRandomNum} ${randomOperator} ${rightRandomNum} \nYour answer: `);
-    textQa.push()
-    count +=1;
+  const randomOperator = operatorArr[Math.floor(Math.random() * (operatorArr.length))];
+  let question = '';
+  const message = 'What is the result of the expression?';
+  let rightAnswer = 0;
+  switch (randomOperator) {
+    case '+':
+      rightAnswer = leftRandomNum + rightRandomNum;
+      question = `${leftRandomNum} + ${rightRandomNum}`;
+      break;
+    case '-':
+      rightAnswer = leftRandomNum - rightRandomNum;
+      question = `${leftRandomNum} - ${rightRandomNum}`;
+      break;
+    case '*':
+      rightAnswer = leftRandomNum * rightRandomNum;
+      question = `${leftRandomNum} * ${rightRandomNum}`;
+      break;
+    default:
+      rightAnswer = 'Smth is wrong';
+      break;
   }
+  const finalArr = [message, question, rightAnswer.toString()];
+  return finalArr;
 };
 
 export default calcGame;
