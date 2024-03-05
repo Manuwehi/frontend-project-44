@@ -11,7 +11,8 @@ const progGame = () => {
     numArr.push(temp);
     temp += num;
   }
-  const rightAnswer = numArr.splice(randIndex, 1, '..').toString();
+  const fakeArr = numArr;
+  const rightAnswer = fakeArr.splice(randIndex, 1, '..').toString();
   const finalArr = [message, numArr, rightAnswer];
   return finalArr;
 };
