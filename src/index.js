@@ -23,7 +23,7 @@ const baseEngine = (game) => {
     }
   }
   if (count === winningCount) {
-    return console.log(`Congratulation, ${userName}!`);
+    return console.log(`Congratulations, ${userName}!`);
   }
   return console.log('Something is wrong');
 };

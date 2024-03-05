@@ -1,7 +1,9 @@
+import getRandomNum from '../src/getRandomNum.js';
+
 const calcGame = () => {
   const operatorArr = ['+', '-', '*'];
-  const leftRandomNum = Math.floor(Math.random() * 100 + 1);
-  const rightRandomNum = Math.floor(Math.random() * 100 + 1);
+  const leftRandomNum = getRandomNum();
+  const rightRandomNum = getRandomNum();
   const randomOperator = operatorArr[Math.floor(Math.random() * (operatorArr.length))];
   let question = '';
   const message = 'What is the result of the expression?';

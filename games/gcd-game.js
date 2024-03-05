@@ -1,6 +1,8 @@
+import getRandomNum from '../src/getRandomNum.js';
+
 const gcdGame = () => {
-  const firstNum = Math.floor(Math.random() * 100 + 1);
-  const secNum = Math.floor(Math.random() * 100 + 1);
+  const firstNum = getRandomNum();
+  const secNum = getRandomNum();
   const greatestNum = firstNum >= secNum ? firstNum : secNum; // сортируем для удобства
   const smallerNum = firstNum <= secNum ? firstNum : secNum;
   const restArr = []; // сохраняем остаток
