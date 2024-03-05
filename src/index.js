@@ -3,9 +3,7 @@ import readlineSync from 'readline-sync';
 import getUserName from './cli.js';
 
 const baseEngine = (game) => {
-  console.log('Welcome to the Brain Games!');
   const userName = getUserName();
-  console.log(`Hello, ${userName}!`);
   let count = 0;
   const winningCount = 3;
   while (count < 3) {
