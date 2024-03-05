@@ -27,5 +27,4 @@ const gcdGame = () => {
   return finalArr;
 };
 
-gcdGame();
 export default gcdGame;
