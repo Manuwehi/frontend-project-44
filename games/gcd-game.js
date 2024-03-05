@@ -5,25 +5,19 @@ const gcdGame = () => {
   const secNum = getRandomNum();
   const greatestNum = firstNum >= secNum ? firstNum : secNum; // сортируем для удобства
   const smallerNum = firstNum <= secNum ? firstNum : secNum;
-  const restArr = []; // сохраняем остаток
-  let rightAnswer = 0;
-  let restNum = greatestNum % smallerNum;
-  let startNum = smallerNum;
   const gameQuestion = `${greatestNum} ${smallerNum}`;
   const message = 'Find the greatest common divisor of given numbers.';
-  if (greatestNum % smallerNum === 0) {
-    rightAnswer = smallerNum.toString();
-  }
-  while (restNum !== 0) {
-    const temp = restNum; // сохраняем остаток для получения НОД (НОД - последний остаток до % = 0)
-    restNum = startNum % restNum;
-    startNum = temp;
-    restArr.push(startNum); // сохраняем все остатки для выбора последнего
-  }
-  if (greatestNum % smallerNum !== 0) {
-    rightAnswer = restArr[restArr.length - 1].toString();
-  }
-  const finalArr = [message, gameQuestion, rightAnswer]; // выводим для индекса
+  const gcd = (restNum, startNum) => {
+    let temp = 0;
+    if (startNum === 0) {
+      temp = restNum;
+    } else {
+      temp = gcd(startNum, restNum % startNum);
+    }
+    return temp;
+  };
+  const rightAnswer = gcd(greatestNum, smallerNum);
+  const finalArr = [message, gameQuestion, rightAnswer.toString()]; // выводим для индекса
   return finalArr;
 };
 
