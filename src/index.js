@@ -19,7 +19,7 @@ const baseEngine = (game) => {
       count += 1;
     } else {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}`);
-      return console.log(`Let's try again, ${userName}`);
+      return console.log(`Let's try again, ${userName}!`);
     }
   }
   if (count === winningCount) {
