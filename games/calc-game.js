@@ -1,31 +1,31 @@
-import getRandomNum from '../src/getRandomNum.js';
+import { getRandomNum } from '../src/utilites.js';
 
-const calcGame = () => {
-  const operatorArr = ['+', '-', '*'];
-  const leftRandomNum = getRandomNum();
-  const rightRandomNum = getRandomNum();
-  const randomOperator = operatorArr[Math.floor(Math.random() * (operatorArr.length))];
-  let question = '';
-  const message = 'What is the result of the expression?';
+const calc = (firstNum, secNum, operator) => {
   let rightAnswer = 0;
-  switch (randomOperator) {
+  switch (operator) {
     case '+':
-      rightAnswer = leftRandomNum + rightRandomNum;
-      question = `${leftRandomNum} + ${rightRandomNum}`;
+      rightAnswer = firstNum + secNum;
       break;
     case '-':
-      rightAnswer = leftRandomNum - rightRandomNum;
-      question = `${leftRandomNum} - ${rightRandomNum}`;
+      rightAnswer = firstNum - secNum;
       break;
     case '*':
-      rightAnswer = leftRandomNum * rightRandomNum;
-      question = `${leftRandomNum} * ${rightRandomNum}`;
+      rightAnswer = firstNum * secNum;
       break;
     default:
       rightAnswer = 'Smth is wrong';
-      break;
   }
-  const finalArr = [message, question, rightAnswer.toString()];
+  return rightAnswer;
+};
+
+const calcGame = () => {
+  const operatorArr = ['+', '-', '*'];
+  const leftRandomNum = getRandomNum(1, 100);
+  const rightRandomNum = getRandomNum(1, 100);
+  const randomOperator = operatorArr[getRandomNum(0, operatorArr.length)];
+  const question = `${leftRandomNum} ${randomOperator} ${rightRandomNum}`;
+  const neededAnswer = calc(leftRandomNum, rightRandomNum, randomOperator);
+  const finalArr = [question, neededAnswer.toString()];
   return finalArr;
 };
 

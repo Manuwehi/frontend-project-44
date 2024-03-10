@@ -2,4 +2,4 @@
 import primeGame from '../games/prime-game.js';
 import index from '../src/index.js';
 
-index(primeGame);
+index(primeGame, 'Answer "yes" if given number is prime. Otherwise answer "no".');

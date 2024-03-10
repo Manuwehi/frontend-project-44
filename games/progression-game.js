@@ -1,18 +1,23 @@
-import getRandomNum from '../src/getRandomNum.js';
+import { getRandomNum } from '../src/utilites.js';
 
-const progGame = () => {
-  const message = 'What number is missing in the progression?';
-  const arrLength = Math.floor(Math.random() * 10 + 5); // 5 - мин длина массива, 10 - макс
+const getProgArr = (num, arrLength) => {
   let numArr = [];
-  const num = getRandomNum();
   let temp = num;
-  const randIndex = Math.floor(Math.random() * arrLength);
   while (numArr.length < arrLength) {
     numArr = numArr.concat(temp);
     temp += num;
   }
-  const rightAnswer = numArr.splice(randIndex, 1, '..').toString();
-  const finalArr = [message, numArr.join(' '), rightAnswer];
+  return numArr;
+};
+
+const progGame = () => {
+  const arrLength = getRandomNum(5, 10); // 5 - мин длина массива, 10 - макс
+  const num = getRandomNum(1, 100);
+  const randIndex = getRandomNum(0, arrLength);
+  const numArr = getProgArr(num, arrLength);
+  const rightAnswer = numArr[randIndex].toString();
+  numArr.splice(randIndex, 1, '..').toString();
+  const finalArr = [numArr.join(' '), rightAnswer];
   return finalArr;
 };
 

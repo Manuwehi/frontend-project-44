@@ -2,4 +2,4 @@
 import gcdGame from '../games/gcd-game.js';
 import index from '../src/index.js';
 
-index(gcdGame);
+index(gcdGame, 'Find the greatest common divisor of given numbers.');

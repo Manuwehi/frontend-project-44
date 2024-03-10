@@ -1,10 +1,9 @@
-import getRandomNum from '../src/getRandomNum.js';
+import { getRandomNum, isRandomEven } from '../src/utilites.js';
 
 const isEvenGame = () => {
-  const message = 'Answer "yes" if the number is even, otherwise answer "no"';
-  const randomNum = getRandomNum();
-  const rightAnswer = !(randomNum % 2) ? 'yes' : 'no';
-  const finalArr = [message, randomNum, rightAnswer];
+  const randomNum = getRandomNum(1, 100);
+  const rightAnswer = isRandomEven(randomNum) ? 'yes' : 'no';
+  const finalArr = [randomNum, rightAnswer];
   return finalArr;
 };
 

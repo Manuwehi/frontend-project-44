@@ -1,16 +1,19 @@
-import getRandomNum from '../src/getRandomNum.js';
+import { getRandomNum } from '../src/utilites.js';
 
-const primeGame = () => {
-  const message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const num = getRandomNum();
-  let rightAnswer = true;
+const isNumPrime = (num) => {
+  let answer = true;
   for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
-      rightAnswer = false;
+      answer = false;
     }
   }
-  const finalAnswer = rightAnswer ? 'yes' : 'no';
-  const finalArr = [message, num, finalAnswer];
+  return answer;
+};
+
+const primeGame = () => {
+  const num = getRandomNum(1, 100);
+  const rightAnswer = isNumPrime(num) ? 'yes' : 'no';
+  const finalArr = [num, rightAnswer];
   return finalArr;
 };
 

@@ -1,23 +1,23 @@
-import getRandomNum from '../src/getRandomNum.js';
+import { getRandomNum } from '../src/utilites.js';
+
+const getSortedNumArr = () => {
+  const tempArr = [];
+  while (tempArr.length < 2) {
+    tempArr.push(getRandomNum(1, 100));
+  }
+  return tempArr.sort();
+};
+
+const gcd = (restNum, startNum) => {
+  const temp = startNum === 0 ? restNum : gcd(startNum, restNum % startNum);
+  return temp;
+};
 
 const gcdGame = () => {
-  const firstNum = getRandomNum();
-  const secNum = getRandomNum();
-  const greatestNum = firstNum >= secNum ? firstNum : secNum; // сортируем для удобства
-  const smallerNum = firstNum <= secNum ? firstNum : secNum;
-  const gameQuestion = `${greatestNum} ${smallerNum}`;
-  const message = 'Find the greatest common divisor of given numbers.';
-  const gcd = (restNum, startNum) => {
-    let temp = 0;
-    if (startNum === 0) {
-      temp = restNum;
-    } else {
-      temp = gcd(startNum, restNum % startNum);
-    }
-    return temp;
-  };
-  const rightAnswer = gcd(greatestNum, smallerNum);
-  const finalArr = [message, gameQuestion, rightAnswer.toString()]; // выводим для индекса
+  const numArr = getSortedNumArr();
+  const gameQuestion = `${numArr[0]} ${numArr[1]}`;
+  const rightAnswer = gcd(numArr[0], numArr[1]);
+  const finalArr = [gameQuestion, rightAnswer.toString()]; // выводим для индекса
   return finalArr;
 };
 
