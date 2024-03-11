@@ -1,4 +1,4 @@
-import { getRandomNum } from '../src/utilites.js';
+import { getRandomNum } from '../utilites.js';
 
 const isNumPrime = (num) => {
   let answer = true;
@@ -13,7 +13,8 @@ const isNumPrime = (num) => {
 const primeGame = () => {
   const num = getRandomNum(1, 100);
   const rightAnswer = isNumPrime(num) ? 'yes' : 'no';
-  const finalArr = [num, rightAnswer];
+  const question = num;
+  const finalArr = [question, rightAnswer];
   return finalArr;
 };
 

@@ -1,9 +1,10 @@
-import { getRandomNum, isRandomEven } from '../src/utilites.js';
+import { getRandomNum, isRandomEven } from '../utilites.js';
 
 const isEvenGame = () => {
   const randomNum = getRandomNum(1, 100);
   const rightAnswer = isRandomEven(randomNum) ? 'yes' : 'no';
-  const finalArr = [randomNum, rightAnswer];
+  const question = randomNum;
+  const finalArr = [question, rightAnswer];
   return finalArr;
 };
 

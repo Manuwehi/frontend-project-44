@@ -1,4 +1,4 @@
-import { getRandomNum } from '../src/utilites.js';
+import { getRandomNum } from '../utilites.js';
 
 const calc = (firstNum, secNum, operator) => {
   let rightAnswer = 0;

@@ -1,4 +1,4 @@
-import { getRandomNum } from '../src/utilites.js';
+import { getRandomNum } from '../utilites.js';
 
 const getProgArr = (num, arrLength) => {
   let numArr = [];
@@ -17,7 +17,8 @@ const progGame = () => {
   const numArr = getProgArr(num, arrLength);
   const rightAnswer = numArr[randIndex].toString();
   numArr.splice(randIndex, 1, '..').toString();
-  const finalArr = [numArr.join(' '), rightAnswer];
+  const question = numArr.join(' ');
+  const finalArr = [question, rightAnswer];
   return finalArr;
 };
 
