@@ -8,4 +8,4 @@ Hello! This is my first pet-project - a couple of console-games.
 You can run them by typing "brain-<game-name>" - there is a 6 (5, one of them is just welcome-func) different games.
 They will challenge your math abilities - sum, multy, div.
 You can change game difficulty by changing variables in the getRandomNum function.
-For install gamse please fork this repo and use 'npm link'
+For install games, please fork this repo and use 'make install'
