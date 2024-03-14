@@ -14,8 +14,7 @@ const primeGame = () => {
   const num = getRandomNum(1, 100);
   const rightAnswer = isNumPrime(num) ? 'yes' : 'no';
   const question = num;
-  const finalArr = [question, rightAnswer];
-  return finalArr;
+  return [question, rightAnswer];
 };
 
 export default primeGame;

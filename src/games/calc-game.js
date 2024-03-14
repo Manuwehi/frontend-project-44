@@ -1,21 +1,16 @@
 import { getRandomNum } from '../utilites.js';
 
 const calc = (firstNum, secNum, operator) => {
-  let rightAnswer = 0;
   switch (operator) {
     case '+':
-      rightAnswer = firstNum + secNum;
-      break;
+      return firstNum + secNum;
     case '-':
-      rightAnswer = firstNum - secNum;
-      break;
+      return firstNum - secNum;
     case '*':
-      rightAnswer = firstNum * secNum;
-      break;
+      return firstNum * secNum;
     default:
-      rightAnswer = 'Smth is wrong';
+      throw new Error('Smth is wrong');
   }
-  return rightAnswer;
 };
 
 const calcGame = () => {
@@ -24,9 +19,8 @@ const calcGame = () => {
   const rightRandomNum = getRandomNum(1, 100);
   const randomOperator = operatorArr[getRandomNum(0, operatorArr.length)];
   const question = `${leftRandomNum} ${randomOperator} ${rightRandomNum}`;
-  const neededAnswer = calc(leftRandomNum, rightRandomNum, randomOperator);
-  const finalArr = [question, neededAnswer.toString()];
-  return finalArr;
+  const neededAnswer = calc(leftRandomNum, rightRandomNum, randomOperator).toString();
+  return [question, neededAnswer];
 };
 
 export default calcGame;
