@@ -10,7 +10,7 @@ const getProgArr = (baseNum, arrLength) => {
   return progression;
 };
 
-const progGame = () => {
+export default () => {
   const arrLength = getRandomNum(5, 10); // 5 - мин длина массива, 10 - макс
   const baseNum = getRandomNum(1, 100);
   const randIndex = getRandomNum(0, arrLength);
@@ -20,5 +20,3 @@ const progGame = () => {
   const question = progression.with(randIndex, '..').join(' ');
   return [question, rightAnswer];
 };
-
-export default progGame;

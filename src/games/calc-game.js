@@ -13,7 +13,7 @@ const doCalc = (firstNum, secNum, operator) => {
   }
 };
 
-const calcGame = () => {
+export default () => {
   const operators = ['+', '-', '*'];
   const leftRandomNum = getRandomNum(1, 100);
   const rightRandomNum = getRandomNum(1, 100);
@@ -22,5 +22,3 @@ const calcGame = () => {
   const neededAnswer = doCalc(leftRandomNum, rightRandomNum, randomOperator).toString();
   return [question, neededAnswer];
 };
-
-export default calcGame;

@@ -10,11 +10,9 @@ const isRandomNumPrime = (num) => {
   return answer;
 };
 
-const primeGame = () => {
+export default () => {
   const randomNum = getRandomNum(1, 100);
   const rightAnswer = isRandomNumPrime(randomNum) ? 'yes' : 'no';
   const question = randomNum;
   return [question, rightAnswer];
 };
-
-export default primeGame;

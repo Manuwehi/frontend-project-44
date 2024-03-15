@@ -5,11 +5,9 @@ const getGcd = (restNum, startNum) => {
   return gcdNum;
 };
 
-const gcdGame = () => {
+export default () => {
   const numbers = [getRandomNum(1, 100), getRandomNum(1, 100)].sort();
   const gameQuestion = `${numbers[0]} ${numbers[1]}`;
   const rightAnswer = getGcd(numbers[0], numbers[1]).toString();
   return [gameQuestion, rightAnswer];
 };
-
-export default gcdGame;

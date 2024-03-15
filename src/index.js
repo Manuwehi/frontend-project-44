@@ -2,7 +2,7 @@
 import readlineSync from 'readline-sync';
 import getUserName from './cli.js';
 
-const baseEngine = (game, message) => {
+export default (game, message) => {
   console.log('Welcome to the Brain Games!');
   const userName = getUserName();
   console.log(`Hello, ${userName}!`);
@@ -21,5 +21,3 @@ const baseEngine = (game, message) => {
   }
   return console.log(`Congratulations, ${userName}!`);
 };
-
-export default baseEngine;
