@@ -1,14 +1,14 @@
 import { getRandomNum } from '../utilites.js';
 
-const gcd = (restNum, startNum) => {
-  const temp = startNum === 0 ? restNum : gcd(startNum, restNum % startNum);
-  return temp;
+const getGcd = (restNum, startNum) => {
+  const gcdNum = startNum === 0 ? restNum : getGcd(startNum, restNum % startNum);
+  return gcdNum;
 };
 
 const gcdGame = () => {
-  const numArr = [getRandomNum(1, 100), getRandomNum(1, 100)].sort();
-  const gameQuestion = `${numArr[0]} ${numArr[1]}`;
-  const rightAnswer = gcd(numArr[0], numArr[1]).toString();
+  const numbers = [getRandomNum(1, 100), getRandomNum(1, 100)].sort();
+  const gameQuestion = `${numbers[0]} ${numbers[1]}`;
+  const rightAnswer = getGcd(numbers[0], numbers[1]).toString();
   return [gameQuestion, rightAnswer];
 };
 

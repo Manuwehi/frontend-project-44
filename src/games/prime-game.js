@@ -1,6 +1,6 @@
 import { getRandomNum } from '../utilites.js';
 
-const isNumPrime = (num) => {
+const isRandomNumPrime = (num) => {
   let answer = true;
   for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
@@ -11,9 +11,9 @@ const isNumPrime = (num) => {
 };
 
 const primeGame = () => {
-  const num = getRandomNum(1, 100);
-  const rightAnswer = isNumPrime(num) ? 'yes' : 'no';
-  const question = num;
+  const randomNum = getRandomNum(1, 100);
+  const rightAnswer = isRandomNumPrime(randomNum) ? 'yes' : 'no';
+  const question = randomNum;
   return [question, rightAnswer];
 };
 
